@@ -4,6 +4,10 @@ public class gestao {
     }
 }
 
+class estoque{
+    
+}
+
 class Produto {
     private String _nome;
     private Double _preco;
