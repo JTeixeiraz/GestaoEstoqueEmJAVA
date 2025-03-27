@@ -5,7 +5,7 @@ public class gestao {
 }
 
 class estoque{
-    
+    Produto produto = new Produto();
 }
 
 class Produto {
