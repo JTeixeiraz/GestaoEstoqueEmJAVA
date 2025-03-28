@@ -2,23 +2,36 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class gestao {
     public static void main(String[] args) throws IOException{
-    
+        estoque e = new estoque();
+        e.adicionarLista();
     }
 }
 
 class estoque{
     Produto produto = new Produto();
-    List<Produto> pessoas = new ArrayList<>();
+    Map<String,Object> produtos = new HashMap<>();
     BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     void adicionarLista() throws IOException{
-        System.out.println("Digite seu nome");
+        System.out.println("Digite o nome do produto:");
         String nome = reader.readLine();
-        System.out.println("O seu nome é: "+nome);
-        //apenas testando o metodo de input, mais tarde irei fazer tudo funcionar corretamente
+        System.out.println("----------------");
+        System.out.println("Digite o preço do produto");
+        String preco = reader.readLine();
+        double valpreco = Double.parseDouble(preco);
+        System.out.println("Digite o seu valor em estoque");
+        String qntd = reader.readLine();
+        int valQuantidade = Integer.parseInt(qntd);
+        produtos.put("nome", new ArrayList<>(Arrays.asList(nome)));
+        produtos.put("Preco", new ArrayList<>(Arrays.asList(valpreco)));
+        produtos.put("Quantidade", new ArrayList<>(Arrays.asList(valQuantidade)));
+        System.out.println("Valores adicionados com sucesso");
+        System.out.print(produtos);
     }
 }
 
